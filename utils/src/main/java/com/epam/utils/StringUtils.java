@@ -1,7 +1,8 @@
 package com.epam.utils;
 
+
 public class StringUtils {
     public static boolean isPositiveNumber(String str) {
-        return !str.isEmpty() && !str.startsWith("-");
+        return !str.isEmpty() && !str.startsWith("-") && !str.equals("0");
     }
 }
