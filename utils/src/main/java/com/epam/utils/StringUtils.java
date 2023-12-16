@@ -5,6 +5,12 @@ import static java.util.Objects.isNull;
 
 public class StringUtils {
     public static boolean isPositiveNumber(String str) {
-        return !isNull(str) && !str.isEmpty() && !str.startsWith("-") && !str.equals("0");
+        if (str == null) return false;
+        try {
+            Float.parseFloat(str);
+        } catch (Exception e) {
+            return false;
+        }
+        return Float.parseFloat(str) > 0;
     }
 }
